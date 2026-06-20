@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Descarga</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+}
+
+button{
+    background:red;
+    color:white;
+    border:none;
+    padding:20px 50px;
+    font-size:24px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+</style>
+
+</head>
+<body>
+
+<button onclick="descargar()">
+DESCARGAR
+</button>
+
+<script>
+function descargar(){
+    window.location.href = "/download";
+}
+</script>
+
+</body>
+</html>
