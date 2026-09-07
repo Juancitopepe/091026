@@ -11,6 +11,19 @@ app.get("/download", (req, res) => {
     res.download(filePath);
 });
 
+app.get(["/happybday", "/happybday/"], (req, res) => {
+    const filePath = path.join(__dirname, "files", "file2.png");
+
+    res.download(filePath, "file2.png", (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        res.redirect("/");
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
