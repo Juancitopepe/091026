@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static("public"));
 
 app.get("/download", (req, res) => {
-    const filePath = path.join(__dirname, "files", "epicoarchivo.png");
+    const filePath = path.join(__dirname, "files", "file1.png");
 
     res.download(filePath);
 });
