@@ -12,16 +12,33 @@ app.get("/download", (req, res) => {
 });
 
 app.get(["/happybday", "/happybday/"], (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+        </head>
+        <body>
+            <script>
+                const link = document.createElement("a");
+                link.href = "/happybday/download";
+                link.download = "file2.png";
+                document.body.appendChild(link);
+                link.click();
+
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 100);
+            </script>
+        </body>
+        </html>
+    `);
+});
+
+app.get("/happybday/download", (req, res) => {
     const filePath = path.join(__dirname, "files", "file2.png");
-
-    res.download(filePath, "file2.mp4", (err) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-
-        res.redirect("/");
-    });
+    res.download(filePath, "file2.png");
 });
 
 const PORT = process.env.PORT || 3000;
