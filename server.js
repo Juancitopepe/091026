@@ -14,7 +14,7 @@ app.get("/download", (req, res) => {
 app.get(["/happybday", "/happybday/"], (req, res) => {
     const filePath = path.join(__dirname, "files", "file2.png");
 
-    res.download(filePath, "file2.png", (err) => {
+    res.download(filePath, "file2.mp4", (err) => {
         if (err) {
             console.error(err);
             return;
