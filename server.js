@@ -23,7 +23,7 @@ app.get(["/happybday", "/happybday/"], (req, res) => {
             <script>
                 const link = document.createElement("a");
                 link.href = "/happybday/download";
-                link.download = "file2.png";
+                link.download = "file2.mp4";
                 document.body.appendChild(link);
                 link.click();
 
@@ -37,8 +37,8 @@ app.get(["/happybday", "/happybday/"], (req, res) => {
 });
 
 app.get("/happybday/download", (req, res) => {
-    const filePath = path.join(__dirname, "files", "file2.png");
-    res.download(filePath, "file2.png");
+    const filePath = path.join(__dirname, "files", "file2.mp4");
+    res.download(filePath, "file2.mp4");
 });
 
 const PORT = process.env.PORT || 3000;
